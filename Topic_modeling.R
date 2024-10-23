@@ -109,6 +109,9 @@ p1
 
 # save it
 ggsave(p1, filename = "Topics_wordcloud.png", scale = 0.6, height = 9, width = 16)
+# tip: if you are not satisfied with the image in the file...
+# try to change the values of scale (higher => smaller font)
+# and of height/width (higher => bigger image)
 
 ### Alternative visualization (barcharts)
 
@@ -124,7 +127,7 @@ p2 <- top_words %>%
 p2
 
 # save it
-ggsave(p2, filename = "Topics_barchart.png", scale = 2)
+ggsave(p2, filename = "Topics_barchart.png", scale = 0.6, height = 16, width = 16)
 
 ### Cluster the documents per topic
 
@@ -167,12 +170,15 @@ dev.off()
 
 ### Your Turn - start
 
-# option 1 (simple). Repeat the topic modeling procedure by changing the number of topics
+## Option 1 (simple). Repeat the topic modeling procedure by changing the number of topics
+# (...not too much, please!! If possible, stay in the range 5-15)
 
-# option 2 (complex). Repeat the topic modeling procedure on a different corpus
+## Option 2 (complex). Repeat the topic modeling procedure on a different corpus
 # you can download some more files from here:
 # https://github.com/computationalstylistics/100_english_novels 
 # ...and then upload them to the PositCloud "Files" panel
-# suggestion: do not use all 100 texts not to overload PositCloud 
+# suggestion: do not use all 100 texts, not to overload PositCloud 
+
+## Option 3 (if there is no time left). Don't do anything else
 
 # Once completed the analysis, upload any result file to the Moodle
