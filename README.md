@@ -26,3 +26,26 @@ To work with the scritps in [PositCloud](https://posit.cloud/), you need to logi
 ## 5. Topic modeling with Mallet
 
 **Instructions:** open the "Topic_modeling.R" file and follow the instructions.
+
+## 6.1 Introduction to Python
+
+**Instructions:**  
+1. Go to the link: [https://colab.research.google.com/](https://colab.research.google.com/)
+(you need to log in with Google to access it)  
+2. Click on "Github" and close the Authorization window (not needed now)  
+3. Copy-paste there the GitHub course repository link:
+https://github.com/SimoneRebora/CMCLS  
+...and click on "Search" (little magnifier button)
+4. Select "Python_intro.ipynb"  
+
+## 6.2 Logistic regression with Python
+
+1. Go to the link: [https://colab.research.google.com/](https://colab.research.google.com/)
+(you need to log in with Google to access it)  
+2. Click on "Github" and close the Authorization window (not needed now)  
+3. Copy-paste there the GitHub course repository link:
+https://github.com/SimoneRebora/CMCLS  
+...and click on "Search" (little magnifier button)
+4. Select "Logistic_regression.ipynb"  
+
+
