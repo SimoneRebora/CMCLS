@@ -40,6 +40,7 @@ https://github.com/SimoneRebora/CMCLS
 
 ## 6.2 Logistic regression with Python
 
+**Instructions:**  
 1. Go to the link: [https://colab.research.google.com/](https://colab.research.google.com/)
 (you need to log in with Google to access it)  
 2. Click on "Github" and close the Authorization window (not needed now)  
@@ -47,5 +48,16 @@ https://github.com/SimoneRebora/CMCLS
 https://github.com/SimoneRebora/CMCLS  
 ...and click on "Search" (little magnifier button)
 4. Select "Logistic_regression.ipynb"  
+
+## 7. Inter-annotator agreement
+
+**Instructions:**  
+1. Go to the link: [https://colab.research.google.com/](https://colab.research.google.com/)
+(you need to log in with Google to access it)  
+2. Click on "Github" and close the Authorization window (not needed now)  
+3. Copy-paste there the GitHub course repository link:
+https://github.com/SimoneRebora/CMCLS  
+...and click on "Search" (little magnifier button)
+4. Select "Inter_Annotator_Agreement.ipynb"  
 
 
