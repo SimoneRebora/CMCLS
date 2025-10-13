@@ -28,21 +28,23 @@ file_path <- "corpus/Doyle_Study_1887.txt"
 # Read the text file
 text_data <- readLines(file_path, encoding = "UTF-8")
 
-# Download the English udpipe model (if not already downloaded)
-ud_model_path <- "english-ewt-ud-2.5-191206.udpipe"
-if (!file.exists(ud_model_path)) {
-  udpipe_download_model(language = "english-ewt")
-}
-
-# Load the udpipe model
-ud_model <- udpipe_load_model(ud_model_path)
-
-# Annotate the text using the udpipe model
-annotation <- udpipe_annotate(ud_model, x = text_data)
-annotation_df <- as.data.frame(annotation)
+# Annotate the text using udpipe
+annotation_df <- udpipe(text_data, "english")
+# Note: it might take a bit...
+# check presence of the "STOP" icon in the Console
 
 # View the annotated text
 View(annotation_df)
+
+### Your Turn (Part 1) - start
+
+# annotate a different text
+
+# tip: just modify line 26 above
+# ...and re-run the script from there
+# warning: it might take a bit for long texts
+
+### Your Turn (Part 1) - end
 
 
 ### Part 2
@@ -51,7 +53,7 @@ View(annotation_df)
 # print the POS types available
 unique(annotation_df$upos)
 
-# select only some (e.g. nouns, verbs, adjectives)
+# select only some (e.g. nouns, verbs, adjectives)
 my_selection <- c("NOUN", "VERB", "ADJ")
 
 # Extract lemmas and filter out non-lemma rows (like punctuation)
@@ -80,7 +82,7 @@ wordcloud(words = lemma_freq$lemma,
 # create another wordcloud
 # with a different POS selection
 
-# tip: just modify line 53 above
+# tip: just modify line 57 above
 # ...and re-run the script from there
 
 ### Your Turn (Part 2) - end
@@ -120,7 +122,7 @@ ggplot(top_pos, aes(x = reorder(lemma, frequency), y = frequency)) +
 # create another barchart
 # with a different POS
 
-# tip: just modify line 93 above
+# tip: just modify line 95 above
 # ...and re-run the script from there
 
 ### Your Turn (Part 3) - end
@@ -138,15 +140,24 @@ my_matches <- which(annotation_df$lemma== my_lemma)
 # print keyword in context via loop
 for(i in 1:length(my_matches)){
   
-  cat(i, "\t", annotation_df$token[(my_matches[i]-5):(my_matches[i]+5)], "\n")
+  cat(i, "\t", 
+      annotation_df$token[(pmax(1, my_matches[i]-5)):(my_matches[i]-1)], "||",
+      annotation_df$token[my_matches[i]], "||",
+      annotation_df$token[(my_matches[i]+1):(my_matches[i]+5)],
+      "\n")
   
 }
 
 # save it to file
 sink("KWIC_results.txt")
+# print keyword in context via loop
 for(i in 1:length(my_matches)){
   
-  cat(i, "\t", annotation_df$token[(my_matches[i]-5):(my_matches[i]+5)], "\n")
+  cat(i, "\t", 
+      annotation_df$token[(pmax(1, my_matches[i]-5)):(my_matches[i]-1)], "||",
+      annotation_df$token[my_matches[i]], "||",
+      annotation_df$token[(my_matches[i]+1):(my_matches[i]+5)],
+      "\n")
   
 }
 sink()
@@ -156,7 +167,7 @@ sink()
 # repeat the KWIC analysis
 # with a different lemma
 
-# tip: just modify line 133 above
+# tip: just modify line 135 above
 # ...and re-run the script from there
 
 ### Your Turn (Part 4) - end
@@ -168,7 +179,7 @@ sink()
 # print the POS types available
 unique(annotation_df$upos)
 
-# select (again) only some POS tags
+# select (again) only some POS tags
 my_selection <- c("NOUN", "VERB", "ADJ")
 
 # Filter the annotations to include only relevant parts of speech
@@ -192,7 +203,7 @@ write.csv(cooccurrences, "word_cooccurrences.csv", row.names = FALSE)
 # repeat the co-occurrence analysis
 # with a different POS selection
 
-# tip: just modify line 172 above
+# tip: just modify line 183 above
 # ...and re-run the script from there
 
 ### Your Turn (Part 5) - end
