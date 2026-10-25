@@ -65,7 +65,3 @@ dev.off()
 # (using the "Upload" button in the "Files" Panel)
 # then you can re-run the full script
 # ...after having changed line 19 accordingly
-
-# For the (only) task today
-# download the last graph to your computer (select the file and "More -> Export")
-# and save it to the Moodle, Hands-on 4

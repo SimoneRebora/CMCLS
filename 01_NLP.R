@@ -36,6 +36,9 @@ annotation_df <- udpipe(text_data, "english")
 # View the annotated text
 View(annotation_df)
 
+# Save the annotated text
+write.csv(annotation_df, "text_annotated.csv", row.names = FALSE)
+
 ### Your Turn (Part 1) - start
 
 # annotate a different text
@@ -82,7 +85,7 @@ wordcloud(words = lemma_freq$lemma,
 # create another wordcloud
 # with a different POS selection
 
-# tip: just modify line 57 above
+# tip: just modify line 60 above
 # ...and re-run the script from there
 
 ### Your Turn (Part 2) - end
@@ -122,7 +125,7 @@ ggplot(top_pos, aes(x = reorder(lemma, frequency), y = frequency)) +
 # create another barchart
 # with a different POS
 
-# tip: just modify line 95 above
+# tip: just modify line 98 above
 # ...and re-run the script from there
 
 ### Your Turn (Part 3) - end
@@ -167,7 +170,7 @@ sink()
 # repeat the KWIC analysis
 # with a different lemma
 
-# tip: just modify line 135 above
+# tip: just modify line 138 above
 # ...and re-run the script from there
 
 ### Your Turn (Part 4) - end
@@ -203,7 +206,7 @@ write.csv(cooccurrences, "word_cooccurrences.csv", row.names = FALSE)
 # repeat the co-occurrence analysis
 # with a different POS selection
 
-# tip: just modify line 183 above
+# tip: just modify line 186 above
 # ...and re-run the script from there
 
 ### Your Turn (Part 5) - end

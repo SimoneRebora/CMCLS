@@ -86,9 +86,21 @@ View(sentences_annotated)
 df_long <- melt(sentences_annotated, id.vars = "book_percentage", variable.name = "emotion", value.name = "value")
 
 # Create the line plot with multiple lines, one for each emotion
-ggplot(df_long, aes(x = book_percentage, y = value, color = emotion)) +
+p <- ggplot(df_long, aes(x = book_percentage, y = value, color = emotion)) +
   geom_line() +
   geom_hline(yintercept = 0, linetype = "dotted") +
   labs(x = "Book Percentage", y = "Value", title = "Multiple Emotions analysis") +
   theme_minimal()
 
+p
+
+ggsave(p, filename = "sentiart_plot.png")
+
+### Your Turn
+
+# Run the same analysis on a different text
+
+# Again, remember that you have to just change the line of code
+# where the text has been defined
+
+# You can just choose one of the given texts, or upload a new one

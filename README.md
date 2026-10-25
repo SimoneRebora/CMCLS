@@ -1,6 +1,6 @@
 # Computational Methods for Comparative Literary Studies
 
-This repository contains all scripts used for the course "Computational Methods for Comparative Literary Studies", held at the University of Verona (A.Y. 2025-2026).
+This repository contains all scripts used for the course "Computational Methods for Comparative Literary Studies", held at the University of Verona (A.Y. 2026-2027).
 
 ## Instructions
 
