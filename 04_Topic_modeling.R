@@ -39,8 +39,14 @@ View(split_texts)
 my_texts <- split_texts(file_list = all_files, split_length = len_split, my_folder = my_folder)
 
 # explore the documents
+
+# the first one
 my_texts[1]
+names(my_texts)[1]
+
+# the 200th
 my_texts[200]
+names(my_texts)[200]
 
 # prepare texts for topic model
 text.instances <- mallet.import(text.array = my_texts, 
@@ -106,9 +112,6 @@ p1 <- ggplot(
   theme_minimal() +
   facet_wrap(~topic)
 
-# show it
-p1
-
 # save it
 ggsave(p1, filename = "Topics_wordcloud.png", scale = 0.6, height = 9, width = 16)
 # tip: if you are not satisfied with the image in the file...
@@ -124,9 +127,6 @@ p2 <- top_words %>%
   geom_col(show.legend = FALSE) +
   facet_wrap(~ topic, scales = "free") +
   scale_y_reordered()
-
-# show it
-p2
 
 # save it
 ggsave(p2, filename = "Topics_barchart.png", scale = 0.6, height = 16, width = 16)
@@ -171,6 +171,11 @@ heatmap(doc.topics.simple, margins = c(30,30), Rowv = NA, Colv = NA, cexRow = 2,
 dev.off()
 
 ### Your Turn - start
+
+## Suggestion
+# Before you start, clean up the Environment (brush icon on the upper right panel)
+# ...and restart R (menu "Session" -> "Restart R")
+# This will allow you to save space for the next analysis
 
 ## Option 1 (simple). Repeat the topic modeling procedure by changing the number of topics
 # (...not too many!! I suggest staying in the range 5-15)
